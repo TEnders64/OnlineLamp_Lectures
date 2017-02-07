@@ -95,21 +95,6 @@ function sum_it_up($arr)
 ####***QUIZ: How do I invoke the function above?***
 
 ####Moving On: Control Flow
-#####Conditionals
-*Only read this material **only if** you understand the previous material*.  This is an example of control flow.  We pose a question that boils down to one of two outcomes: `true` or `false`.
-How would we write that in PHP?
-```php
-<?php
-$understand = true;
-$practice = true;
-if ($understand == true && $practice == true){
-  echo "<h1>BRILLIANT!</h1>";
-}
-else {
-  echo "<h1>You must go back and review</h1>";
-}
-?>
-```
 
 #####For Loops
 Another form of control flow is looping.  Let's take a look at an example of what loops can save us from:
