@@ -50,3 +50,4 @@ Example:
 ```
 
 #####LEMO: Build an HTML Table with dog info!
+![Dog Table](dog_table.png)
