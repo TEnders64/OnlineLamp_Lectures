@@ -95,5 +95,44 @@ Think of session as this awesome associative array (kinda like `$_GET` and `$_PO
   $_SESSION['name'] = "Todd";
 ?>
 ```
+Simple enough.  `$_SESSION` is an associative array.  We know how to deal with those.  Let's do something more interesting though and add it to our process.php file.
+
+```php
+<?php
+//inside process.php
+  session_start();
+  $_SESSION['email'] = $_POST['email'];
+?>
+```
+Here we are taking information from `$_POST` and storing it in `$_SESSION`.  No big deal. But let's be more realistic and send a user somewhere else after we do this logic.
 
 ####Headers
+Headers allow us to redirect a user around our applications.  That normal behavior you get when you submit a form and are then shown another page that might show some text that says "SUCCESSFULLY SUBMITTED THE FORM!" is what headers allow us to do.
+
+For an example, let's create a third page called results.php and this will be a simple page that might show us what information we have stored inside session or form data submitted from another page like index.php  
+
+results.php
+```php
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+  </head>
+  <body>
+    <h1>Results</h1>
+    <p>Email: <?= $_SESSION['email'] ?></p>
+  </body>
+</html>
+```
+But how we get them there from process.php looks like this...
+
+```php
+<?php
+//inside process.php
+  session_start();
+  $_SESSION['email'] = $_POST['email'];
+  header('location: results.php');
+?>
+```
